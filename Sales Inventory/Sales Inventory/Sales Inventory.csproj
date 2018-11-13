@@ -52,11 +52,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModuleChoice.cs">
+    <Compile Include="CashierHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include=".Designer.cs">
-      <DependentUpon>ModuleChoice.cs</DependentUpon>
+      <DependentUpon>CashierHomePage.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -64,8 +64,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModuleChoice.resx">
-      <DependentUpon>ModuleChoice.cs</DependentUpon>
+    <EmbeddedResource Include="CashierHomePage.resx">
+      <DependentUpon>CashierHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

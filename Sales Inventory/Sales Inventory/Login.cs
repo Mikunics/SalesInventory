@@ -30,7 +30,7 @@ namespace Sales_Inventory
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form next = new ModuleChoice();
+            Form next = new CashierHomePage();
             next.Show();
         }
     }

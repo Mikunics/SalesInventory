@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sales_Inventory
 {
-    public partial class ModuleChoice : Form
+    public partial class CashierHomePage : Form
     {
-        public ModuleChoice()
+        public CashierHomePage()
         {
             InitializeComponent();
         }
