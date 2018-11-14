@@ -22,5 +22,11 @@ namespace Sales_Inventory
             Form EndTransaction = new EndTransactionPage();
             EndTransaction.ShowDialog();
         }
+
+        private void buttonCancelTransaction_Click(object sender, EventArgs e)
+        {
+            Form CancelTransaction = new CancelTransactionPage();
+            CancelTransaction.ShowDialog();
+        }
     }
 }

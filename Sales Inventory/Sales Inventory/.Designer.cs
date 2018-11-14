@@ -95,6 +95,7 @@ namespace Sales_Inventory
             this.buttonCancelTransaction.TabIndex = 5;
             this.buttonCancelTransaction.Text = "Cancel Previous Transaction";
             this.buttonCancelTransaction.UseVisualStyleBackColor = true;
+            this.buttonCancelTransaction.Click += new System.EventHandler(this.buttonCancelTransaction_Click);
             // 
             // buttonResetTransaction
             // 
