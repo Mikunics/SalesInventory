@@ -71,7 +71,7 @@ namespace Sales_Inventory
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(664, 86);
+            this.labelDate.Location = new System.Drawing.Point(663, 84);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(48, 20);
             this.labelDate.TabIndex = 3;
@@ -85,6 +85,7 @@ namespace Sales_Inventory
             this.buttonEndTransaction.TabIndex = 4;
             this.buttonEndTransaction.Text = "End Current Transcation";
             this.buttonEndTransaction.UseVisualStyleBackColor = true;
+            this.buttonEndTransaction.Click += new System.EventHandler(this.buttonEndTransaction_Click);
             // 
             // buttonCancelTransaction
             // 

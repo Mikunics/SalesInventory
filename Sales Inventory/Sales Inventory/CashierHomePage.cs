@@ -16,5 +16,11 @@ namespace Sales_Inventory
         {
             InitializeComponent();
         }
+
+        private void buttonEndTransaction_Click(object sender, EventArgs e)
+        {
+            Form EndTransaction = new EndTransactionPage();
+            EndTransaction.ShowDialog();
+        }
     }
 }

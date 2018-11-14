@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,26 +10,25 @@ using System.Windows.Forms;
 
 namespace Sales_Inventory
 {
-    public partial class Login : Form
+    public partial class EndTransactionPage : Form
     {
-        public Login()
+        public EndTransactionPage()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void EndTransactionPage_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void buttonCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }
