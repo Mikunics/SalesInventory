@@ -18,9 +18,14 @@ namespace Sales_Inventory
             Application.SetCompatibleTextRenderingDefault(false);
 
             Form Login = new Login();
-            if(Login.ShowDialog() == DialogResult.OK)
-            {Application.Run(new CashierHomePage());}
-            
+            while (true)
+            {
+                if (Login.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new CashierHomePage());
+                    break;
+                }
+            }
         }
     }
 }

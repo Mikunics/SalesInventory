@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Home.Designer.cs">
+      <DependentUpon>Admin Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="CancelTransactionPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="EndTransactionPage.Designer.cs">
       <DependentUpon>EndTransactionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory Home.Designer.cs">
+      <DependentUpon>Inventory Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -73,11 +85,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin Home.resx">
+      <DependentUpon>Admin Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CancelTransactionPage.resx">
       <DependentUpon>CancelTransactionPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EndTransactionPage.resx">
       <DependentUpon>EndTransactionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory Home.resx">
+      <DependentUpon>Inventory Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

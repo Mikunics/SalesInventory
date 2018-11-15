@@ -114,6 +114,7 @@ namespace Sales_Inventory
             this.buttonSalesInventory.TabIndex = 7;
             this.buttonSalesInventory.Text = "Access Sales Inventory";
             this.buttonSalesInventory.UseVisualStyleBackColor = true;
+            this.buttonSalesInventory.Click += new System.EventHandler(this.buttonSalesInventory_Click);
             // 
             // buttonLogout
             // 
@@ -132,6 +133,7 @@ namespace Sales_Inventory
             this.buttonAdmin.TabIndex = 9;
             this.buttonAdmin.Text = "Access Admin Controls";
             this.buttonAdmin.UseVisualStyleBackColor = true;
+            this.buttonAdmin.Click += new System.EventHandler(this.buttonAdmin_Click);
             // 
             // CashierHomePage
             // 
@@ -151,6 +153,7 @@ namespace Sales_Inventory
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CashierHomePage";
             this.Text = "Cashier Home";
+            this.Load += new System.EventHandler(this.CashierHomePage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
