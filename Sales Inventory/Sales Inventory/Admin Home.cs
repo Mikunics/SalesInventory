@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +24,18 @@ namespace Sales_Inventory
 
         private void AdminHome_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Parent.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form AddLogin = new AddLogin();
+            AddLogin.ShowDialog();
+        }
+
+        private void buttonEditLogin_Click(object sender, EventArgs e)
+        {
+            Form EditLogin = new EditLogin();
+            EditLogin.ShowDialog();
         }
     }
 }

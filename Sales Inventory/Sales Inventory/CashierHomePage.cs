@@ -31,18 +31,14 @@ namespace Sales_Inventory
 
         private void buttonSalesInventory_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form SalesInventory = new InventoryHome();
-            SalesInventory.Parent = this;
-            SalesInventory.Show();
+            SalesInventory.ShowDialog();
         }
 
         private void buttonAdmin_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form AdminControl = new AdminHome();
-            AdminControl.Parent = this;
-            AdminControl.Show();
+            AdminControl.ShowDialog();
         }
 
         private void CashierHomePage_Load(object sender, EventArgs e)
