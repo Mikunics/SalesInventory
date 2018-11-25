@@ -28,9 +28,9 @@ namespace Sales_Inventory
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.comboBoxAccessLevel = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,31 +38,32 @@ namespace Sales_Inventory
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxUsername.Location = new System.Drawing.Point(92, 23);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(164, 20);
+            this.textBoxUsername.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(92, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 20);
-            this.textBox2.TabIndex = 1;
+            this.textBoxPassword.Location = new System.Drawing.Point(92, 63);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(164, 20);
+            this.textBoxPassword.TabIndex = 1;
             // 
-            // comboBox1
+            // comboBoxAccessLevel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxAccessLevel.FormattingEnabled = true;
+            this.comboBoxAccessLevel.Items.AddRange(new object[] {
             "Cashier Level Access",
             "Sales Manager Level Access",
             "Admin Level Access"});
-            this.comboBox1.Location = new System.Drawing.Point(92, 105);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxAccessLevel.Location = new System.Drawing.Point(92, 105);
+            this.comboBoxAccessLevel.Name = "comboBoxAccessLevel";
+            this.comboBoxAccessLevel.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxAccessLevel.TabIndex = 2;
+            this.comboBoxAccessLevel.SelectedIndexChanged += new System.EventHandler(this.comboBoxAccessLevel_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -121,9 +122,9 @@ namespace Sales_Inventory
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBoxAccessLevel);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxUsername);
             this.Name = "AddLogin";
             this.Text = "Add Login";
             this.ResumeLayout(false);
@@ -133,9 +134,9 @@ namespace Sales_Inventory
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.ComboBox comboBoxAccessLevel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
