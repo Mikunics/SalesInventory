@@ -14,14 +14,28 @@ namespace Sales_Inventory
     public partial class Login : Form
     {
         public int access { get; set; }
+        internal static string GetStringSha256Hash(string text)
+        {
+            if (String.IsNullOrEmpty(text))
+                return String.Empty;
+
+            using (var sha = new System.Security.Cryptography.SHA256Managed())
+            {
+                byte[] textData = System.Text.Encoding.UTF8.GetBytes(text);
+                byte[] hash = sha.ComputeHash(textData);
+                return BitConverter.ToString(hash).Replace("-", String.Empty);
+            }
+        }
         private int Authenticate()
         {
             /*
             Authenticate whether typed in credentials are in the database and return the access level of said credentials
             Returns 0 if credentials are invalid
             */
+
+            string hashed = GetStringSha256Hash(textBoxPassword.Text);
             string connectionString = ConnectionString.Connection;
-            string query = "SELECT * FROM login_module WHERE username = '"+textBoxUsername.Text+"' AND password = '"+textBoxPassword.Text+"' ";
+            string query = "SELECT * FROM login_module WHERE username = '"+textBoxUsername.Text+"' AND password = '"+hashed+"' ";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;

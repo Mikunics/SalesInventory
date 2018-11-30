@@ -8,11 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace Sales_Inventory
 {
     public partial class AddLogin : Form
     {
+        internal static string GetStringSha256Hash(string text)
+        {
+            if (String.IsNullOrEmpty(text))
+                return String.Empty;
+
+            using (var sha = new System.Security.Cryptography.SHA256Managed())
+            {
+                byte[] textData = System.Text.Encoding.UTF8.GetBytes(text);
+                byte[] hash = sha.ComputeHash(textData);
+                return BitConverter.ToString(hash).Replace("-", String.Empty);
+            }
+        }
         private bool AddCredentials()
         {
             int accesslevel;
@@ -41,7 +54,8 @@ namespace Sales_Inventory
                     return false;
             }
             string connectionString = ConnectionString.Connection;
-            string query = "INSERT INTO login_module(`id`, `username`, `password`, `access level`) VALUES (NULL, '" + textBoxUsername.Text + "', '" + textBoxPassword.Text + "', '" + accesslevel + "')";
+            string hashed = GetStringSha256Hash(textBoxPassword.Text);
+            string query = "INSERT INTO login_module(`id`, `username`, `password`, `access level`) VALUES (NULL, '" + textBoxUsername.Text + "', '" + hashed + "', '" + accesslevel + "')";
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
