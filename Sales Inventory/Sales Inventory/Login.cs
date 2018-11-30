@@ -37,17 +37,17 @@ namespace Sales_Inventory
             string connectionString = ConnectionString.Connection;
             string query = "SELECT * FROM login_module WHERE username = '"+textBoxUsername.Text+"' AND password = '"+hashed+"' ";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
+            MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
+            databaseCommand.CommandTimeout = 60;
 
             try
             {
                 databaseConnection.Open();
-                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                MySqlDataReader myReader = databaseCommand.ExecuteReader();
                 if (myReader.HasRows)
                 {
                     myReader.Read();
-                    int i = myReader.GetInt16("access level");
+                    int i = myReader.GetInt16("accesslevel");
                     databaseConnection.Close();
                     return i;
                 }

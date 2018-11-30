@@ -55,16 +55,16 @@ namespace Sales_Inventory
             }
             string connectionString = ConnectionString.Connection;
             string hashed = GetStringSha256Hash(textBoxPassword.Text);
-            string query = "INSERT INTO login_module(`id`, `username`, `password`, `access level`) VALUES (NULL, '" + textBoxUsername.Text + "', '" + hashed + "', '" + accesslevel + "')";
+            string query = "INSERT INTO login_module(`id`, `username`, `password`, `accesslevel`) VALUES (NULL, '" + textBoxUsername.Text + "', '" + hashed + "', '" + accesslevel + "')";
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
+            MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
+            databaseCommand.CommandTimeout = 60;
 
             try
             {
                 databaseConnection.Open();
-                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                MySqlDataReader myReader = databaseCommand.ExecuteReader();
                 MessageBox.Show("Login Credentials Succesfully Added");
                 databaseConnection.Close();
                 return true;
