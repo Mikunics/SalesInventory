@@ -16,6 +16,8 @@ namespace Sales_Inventory
     {
         internal static string GetStringSha256Hash(string text)
         {
+            // Hashes given string using SHA256
+
             if (String.IsNullOrEmpty(text))
                 return String.Empty;
 

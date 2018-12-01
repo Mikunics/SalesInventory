@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Sales_Inventory
 {
@@ -17,6 +18,70 @@ namespace Sales_Inventory
             InitializeComponent();
         }
 
+        private void LoadView()
+        {
+
+            // Loads the Data Grid View to see the what the table item_catalog contains.
+
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            MySqlConnection databaseConnection = new MySqlConnection(ConnectionString.Connection);
+
+            MySqlCommand databaseCommand = new MySqlCommand("SELECT * FROM item_catalog", databaseConnection);
+
+            try
+
+            {
+
+                MySqlDataAdapter databaseAdapter = new MySqlDataAdapter();
+
+                databaseAdapter.SelectCommand = databaseCommand;
+
+                DataTable databaseTable = new DataTable();
+
+                databaseAdapter.Fill(databaseTable);
+
+                BindingSource bSource = new BindingSource();
+
+                bSource.DataSource = databaseTable;
+
+                dataGridView1.DataSource = bSource;
+
+            }
+
+            catch (Exception ec)
+
+            {
+
+                MessageBox.Show(ec.Message);
+
+            }
+        }
+
+        private bool EditExistingItem()
+        {
+            string connectionString = ConnectionString.Connection;
+            string query = "UPDATE item_catalog SET Name = '" + textBoxItemName.Text + "', Price = '" + textBoxPrice.Text + "' WHERE ItemCode = '" + textBoxItemCode.Text + "'";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
+            databaseCommand.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = databaseCommand.ExecuteReader();
+                MessageBox.Show("Item Succesfully Updated");
+                databaseConnection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -25,8 +90,31 @@ namespace Sales_Inventory
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (EditExistingItem())
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dataGridView1.Focused)
+            {
+                textBoxItemCode.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                textBoxItemName.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                textBoxPrice.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            }
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            LoadView();
+        }
+
+        private void EditItem_Load(object sender, EventArgs e)
+        {
+            LoadView();
         }
     }
 }

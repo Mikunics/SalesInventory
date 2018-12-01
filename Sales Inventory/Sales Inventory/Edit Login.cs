@@ -20,6 +20,8 @@ namespace Sales_Inventory
 
         internal static string GetStringSha256Hash(string text)
         {
+            // Hashes given string using SHA256
+
             if (String.IsNullOrEmpty(text))
                 return String.Empty;
 
@@ -155,6 +157,16 @@ namespace Sales_Inventory
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void comboBoxAccessLevel_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
             if (dataGridView1.Focused)
             {
                 textBoxID.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
@@ -175,11 +187,6 @@ namespace Sales_Inventory
                         break;
                 }
             }
-        }
-
-        private void comboBoxAccessLevel_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            
         }
     }
 }

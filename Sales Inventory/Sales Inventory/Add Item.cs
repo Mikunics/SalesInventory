@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Sales_Inventory
 {
@@ -17,10 +18,38 @@ namespace Sales_Inventory
             InitializeComponent();
         }
 
+        private bool AddNewItem()
+        {
+            string connectionString = ConnectionString.Connection;
+            string query = "INSERT INTO item_catalog(ItemCode, Name, Price) VALUES (NULL,'" + textBoxItemName.Text + "', '"+textBoxItemPrice.Text+"')";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
+            databaseCommand.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = databaseCommand.ExecuteReader();
+                MessageBox.Show("Item successfully added");
+                databaseConnection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (AddNewItem())
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
