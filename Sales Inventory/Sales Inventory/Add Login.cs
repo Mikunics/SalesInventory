@@ -88,14 +88,14 @@ namespace Sales_Inventory
             if (AddCredentials())
             {
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                this.Dispose();
             }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            this.Dispose();
         }
 
         private void comboBoxAccessLevel_SelectedIndexChanged(object sender, EventArgs e)

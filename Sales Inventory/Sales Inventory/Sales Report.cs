@@ -20,13 +20,13 @@ namespace Sales_Inventory
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-            this.Close();
+            this.Dispose();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            this.Dispose();
         }
     }
 }

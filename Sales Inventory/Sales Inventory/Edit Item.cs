@@ -85,7 +85,7 @@ namespace Sales_Inventory
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            this.Dispose();
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace Sales_Inventory
             if (EditExistingItem())
             {
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                this.Dispose();
             }
         }
 
