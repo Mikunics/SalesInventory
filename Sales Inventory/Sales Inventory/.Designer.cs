@@ -44,44 +44,46 @@ namespace Sales_Inventory
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 10);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 443);
+            this.dataGridView1.Size = new System.Drawing.Size(573, 354);
             this.dataGridView1.TabIndex = 0;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(664, 13);
+            this.labelName.Location = new System.Drawing.Point(590, 10);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(67, 20);
+            this.labelName.Size = new System.Drawing.Size(60, 17);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Cashier:";
             // 
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.Location = new System.Drawing.Point(664, 158);
+            this.labelTime.Location = new System.Drawing.Point(590, 126);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(47, 20);
+            this.labelTime.Size = new System.Drawing.Size(43, 17);
             this.labelTime.TabIndex = 2;
             this.labelTime.Text = "Time:";
             // 
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(663, 84);
+            this.labelDate.Location = new System.Drawing.Point(589, 67);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(48, 20);
+            this.labelDate.Size = new System.Drawing.Size(42, 17);
             this.labelDate.TabIndex = 3;
             this.labelDate.Text = "Date:";
             // 
             // buttonEndTransaction
             // 
-            this.buttonEndTransaction.Location = new System.Drawing.Point(13, 462);
+            this.buttonEndTransaction.Location = new System.Drawing.Point(12, 370);
+            this.buttonEndTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEndTransaction.Name = "buttonEndTransaction";
-            this.buttonEndTransaction.Size = new System.Drawing.Size(210, 105);
+            this.buttonEndTransaction.Size = new System.Drawing.Size(187, 84);
             this.buttonEndTransaction.TabIndex = 4;
             this.buttonEndTransaction.Text = "End Current Transcation";
             this.buttonEndTransaction.UseVisualStyleBackColor = true;
@@ -89,9 +91,10 @@ namespace Sales_Inventory
             // 
             // buttonCancelTransaction
             // 
-            this.buttonCancelTransaction.Location = new System.Drawing.Point(229, 462);
+            this.buttonCancelTransaction.Location = new System.Drawing.Point(204, 370);
+            this.buttonCancelTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelTransaction.Name = "buttonCancelTransaction";
-            this.buttonCancelTransaction.Size = new System.Drawing.Size(210, 105);
+            this.buttonCancelTransaction.Size = new System.Drawing.Size(187, 84);
             this.buttonCancelTransaction.TabIndex = 5;
             this.buttonCancelTransaction.Text = "Cancel Previous Transaction";
             this.buttonCancelTransaction.UseVisualStyleBackColor = true;
@@ -99,18 +102,21 @@ namespace Sales_Inventory
             // 
             // buttonResetTransaction
             // 
-            this.buttonResetTransaction.Location = new System.Drawing.Point(445, 462);
+            this.buttonResetTransaction.Location = new System.Drawing.Point(396, 370);
+            this.buttonResetTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonResetTransaction.Name = "buttonResetTransaction";
-            this.buttonResetTransaction.Size = new System.Drawing.Size(210, 105);
+            this.buttonResetTransaction.Size = new System.Drawing.Size(187, 84);
             this.buttonResetTransaction.TabIndex = 6;
             this.buttonResetTransaction.Text = "Reset Current Transaction";
             this.buttonResetTransaction.UseVisualStyleBackColor = true;
+            this.buttonResetTransaction.Click += new System.EventHandler(this.buttonResetTransaction_Click);
             // 
             // buttonSalesInventory
             // 
-            this.buttonSalesInventory.Location = new System.Drawing.Point(668, 269);
+            this.buttonSalesInventory.Location = new System.Drawing.Point(594, 215);
+            this.buttonSalesInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalesInventory.Name = "buttonSalesInventory";
-            this.buttonSalesInventory.Size = new System.Drawing.Size(163, 63);
+            this.buttonSalesInventory.Size = new System.Drawing.Size(145, 50);
             this.buttonSalesInventory.TabIndex = 7;
             this.buttonSalesInventory.Text = "Access Sales Inventory";
             this.buttonSalesInventory.UseVisualStyleBackColor = true;
@@ -118,18 +124,20 @@ namespace Sales_Inventory
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(668, 491);
+            this.buttonLogout.Location = new System.Drawing.Point(594, 393);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(163, 47);
+            this.buttonLogout.Size = new System.Drawing.Size(145, 38);
             this.buttonLogout.TabIndex = 8;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
             // 
             // buttonAdmin
             // 
-            this.buttonAdmin.Location = new System.Drawing.Point(668, 361);
+            this.buttonAdmin.Location = new System.Drawing.Point(594, 289);
+            this.buttonAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdmin.Name = "buttonAdmin";
-            this.buttonAdmin.Size = new System.Drawing.Size(163, 61);
+            this.buttonAdmin.Size = new System.Drawing.Size(145, 49);
             this.buttonAdmin.TabIndex = 9;
             this.buttonAdmin.Text = "Access Admin Controls";
             this.buttonAdmin.UseVisualStyleBackColor = true;
@@ -137,9 +145,9 @@ namespace Sales_Inventory
             // 
             // CashierHomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 579);
+            this.ClientSize = new System.Drawing.Size(749, 463);
             this.Controls.Add(this.buttonAdmin);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonSalesInventory);
@@ -150,7 +158,7 @@ namespace Sales_Inventory
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CashierHomePage";
             this.Text = "Cashier Home";
             this.Load += new System.EventHandler(this.CashierHomePage_Load);

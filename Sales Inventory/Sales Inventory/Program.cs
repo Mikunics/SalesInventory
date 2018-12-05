@@ -12,6 +12,8 @@ namespace Sales_Inventory
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+
+
         static void Main()
         {
             Application.EnableVisualStyles();
@@ -22,8 +24,9 @@ namespace Sales_Inventory
                 var result = Login.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    int i = Login.access;
-                    Application.Run(new CashierHomePage());
+                    int i = Login.Access;
+                    Login.Dispose();
+                    Application.Run(new CashierHomePage(i));
                 } 
             }
         }

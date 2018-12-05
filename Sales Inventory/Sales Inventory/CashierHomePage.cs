@@ -12,9 +12,17 @@ namespace Sales_Inventory
 {
     public partial class CashierHomePage : Form
     {
-        public CashierHomePage()
+        public CashierHomePage(int i)
         {
             InitializeComponent();
+            if (i >= 2)
+            {
+                buttonAdmin.Visible = false;
+            }
+            if (i == 3)
+            {
+                buttonSalesInventory.Visible = false;
+            }
         }
 
         private void buttonEndTransaction_Click(object sender, EventArgs e)
@@ -42,6 +50,11 @@ namespace Sales_Inventory
         }
 
         private void CashierHomePage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonResetTransaction_Click(object sender, EventArgs e)
         {
 
         }

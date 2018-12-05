@@ -13,7 +13,7 @@ namespace Sales_Inventory
 {
     public partial class Login : Form
     {
-        public int access { get; set; }
+        public int Access {get; private set;}
         internal static string GetStringSha256Hash(string text)
         {
             // Hashes given string using SHA256
@@ -86,7 +86,7 @@ namespace Sales_Inventory
         {
             int i = Authenticate();
             if (i >= 1) {
-                this.access = i;
+                this.Access = i;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
