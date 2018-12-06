@@ -45,9 +45,10 @@ namespace Sales_Inventory
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 13);
+            this.label1.Size = new System.Drawing.Size(182, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select item you wish to edit:";
             // 
@@ -56,18 +57,20 @@ namespace Sales_Inventory
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 31);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(321, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(428, 310);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(12, 283);
+            this.buttonCancel.Location = new System.Drawing.Point(16, 348);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(144, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(192, 28);
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@ namespace Sales_Inventory
             // 
             // buttonConfirm
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(432, 283);
+            this.buttonConfirm.Location = new System.Drawing.Point(576, 348);
+            this.buttonConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(144, 23);
+            this.buttonConfirm.Size = new System.Drawing.Size(192, 28);
             this.buttonConfirm.TabIndex = 3;
             this.buttonConfirm.Text = "Confirm";
             this.buttonConfirm.UseVisualStyleBackColor = true;
@@ -86,56 +90,63 @@ namespace Sales_Inventory
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(336, 36);
+            this.label2.Location = new System.Drawing.Point(448, 44);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(75, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Item Code:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(337, 104);
+            this.label3.Location = new System.Drawing.Point(449, 128);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(79, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Item Name:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(336, 184);
+            this.label4.Location = new System.Drawing.Point(448, 226);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(44, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Price:";
             // 
             // textBoxItemCode
             // 
-            this.textBoxItemCode.Location = new System.Drawing.Point(339, 67);
+            this.textBoxItemCode.Location = new System.Drawing.Point(452, 82);
+            this.textBoxItemCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxItemCode.Name = "textBoxItemCode";
-            this.textBoxItemCode.Size = new System.Drawing.Size(236, 20);
+            this.textBoxItemCode.Size = new System.Drawing.Size(313, 22);
             this.textBoxItemCode.TabIndex = 7;
             // 
             // textBoxItemName
             // 
-            this.textBoxItemName.Location = new System.Drawing.Point(340, 142);
+            this.textBoxItemName.Location = new System.Drawing.Point(453, 175);
+            this.textBoxItemName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxItemName.Name = "textBoxItemName";
-            this.textBoxItemName.Size = new System.Drawing.Size(236, 20);
+            this.textBoxItemName.Size = new System.Drawing.Size(313, 22);
             this.textBoxItemName.TabIndex = 8;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(339, 214);
+            this.textBoxPrice.Location = new System.Drawing.Point(452, 263);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(236, 20);
+            this.textBoxPrice.Size = new System.Drawing.Size(313, 22);
             this.textBoxPrice.TabIndex = 9;
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Location = new System.Drawing.Point(233, 285);
+            this.buttonRefresh.Location = new System.Drawing.Point(311, 351);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(137, 21);
+            this.buttonRefresh.Size = new System.Drawing.Size(183, 26);
             this.buttonRefresh.TabIndex = 10;
             this.buttonRefresh.Text = "Refresh Database";
             this.buttonRefresh.UseVisualStyleBackColor = true;
@@ -143,9 +154,9 @@ namespace Sales_Inventory
             // 
             // EditItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 316);
+            this.ClientSize = new System.Drawing.Size(784, 389);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.textBoxItemName);
@@ -157,6 +168,7 @@ namespace Sales_Inventory
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditItem";
             this.Text = "Edit Item";
             this.Load += new System.EventHandler(this.EditItem_Load);

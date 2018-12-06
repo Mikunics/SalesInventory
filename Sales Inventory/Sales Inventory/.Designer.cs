@@ -38,6 +38,7 @@ namespace Sales_Inventory
             this.buttonSalesInventory = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonAdmin = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@ namespace Sales_Inventory
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(573, 354);
+            this.dataGridView1.Size = new System.Drawing.Size(573, 285);
             this.dataGridView1.TabIndex = 0;
             // 
             // labelName
@@ -131,6 +132,7 @@ namespace Sales_Inventory
             this.buttonLogout.TabIndex = 8;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonAdmin
             // 
@@ -143,11 +145,20 @@ namespace Sales_Inventory
             this.buttonAdmin.UseVisualStyleBackColor = true;
             this.buttonAdmin.Click += new System.EventHandler(this.buttonAdmin_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 314);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(379, 24);
+            this.comboBox1.TabIndex = 10;
+            // 
             // CashierHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 463);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonAdmin);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonSalesInventory);
@@ -158,7 +169,7 @@ namespace Sales_Inventory
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CashierHomePage";
             this.Text = "Cashier Home";
             this.Load += new System.EventHandler(this.CashierHomePage_Load);
@@ -180,5 +191,6 @@ namespace Sales_Inventory
         private System.Windows.Forms.Button buttonSalesInventory;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button buttonAdmin;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

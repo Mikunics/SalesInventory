@@ -17,11 +17,11 @@ namespace Sales_Inventory
             InitializeComponent();
             if (i >= 2)
             {
-                buttonAdmin.Visible = false;
+                buttonAdmin.Dispose();
             }
             if (i == 3)
             {
-                buttonSalesInventory.Visible = false;
+                buttonSalesInventory.Dispose();
             }
         }
 
@@ -57,6 +57,11 @@ namespace Sales_Inventory
         private void buttonResetTransaction_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
