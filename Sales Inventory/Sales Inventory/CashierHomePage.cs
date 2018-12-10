@@ -13,14 +13,24 @@ namespace Sales_Inventory
 {
     public partial class CashierHomePage : Form
     {
-        private class transaction
+        class transaction
         {
-            string ItemName { get; set; }
-            int quantity { get; set; }
-
-            public transaction(string name,int i)
+            private string _ItemName;
+            private int _quantity;
+            public string ItemName
             {
-                ItemName = name;
+                get { return _ItemName; }
+                set { _ItemName = value; }
+            }
+            public int quantity
+            {
+                get { return _quantity; }
+                set { _quantity = value; }
+            }
+
+            public transaction(string a, int i)
+            {
+                ItemName = a;
                 quantity = i;
             }
         }
@@ -95,8 +105,8 @@ namespace Sales_Inventory
         private void CashierHomePage_Load(object sender, EventArgs e)
         {
             PopulateItemName();
-            var bindinglist = new BindingList<transaction>(transactions);
-            var source = new BindingSource(bindinglist, null);
+            var bindingList = new BindingList<transaction>(transactions);
+            var source = new BindingSource(bindingList, null);
             dataGridView1.DataSource = source;
         }
 
@@ -113,9 +123,7 @@ namespace Sales_Inventory
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             transactions.Add(new transaction(comboBoxItemName.Text, (int)numericUpDownQuantity.Value));
-            var bindinglist = new BindingList<transaction>(transactions);
-            var source = new BindingSource(bindinglist, null);
-            dataGridView1.DataSource = source;
+            
         }
     }
 }
