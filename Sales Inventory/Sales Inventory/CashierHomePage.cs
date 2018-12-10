@@ -7,11 +7,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Sales_Inventory
 {
     public partial class CashierHomePage : Form
     {
+        private class transaction
+        {
+            string ItemName { get; set; }
+            int quantity { get; set; }
+
+            public transaction(string name,int i)
+            {
+                ItemName = name;
+                quantity = i;
+            }
+        }
+        List<transaction> transactions = new List<transaction>();
+
+
+        private void PopulateItemName()
+        {
+            string connectionString = ConnectionString.Connection;
+            string query = "SELECT Name FROM item_catalog";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
+            databaseCommand.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = databaseCommand.ExecuteReader();
+                if(myReader.HasRows)
+                {
+                    while (myReader.Read())
+                    {
+                        comboBoxItemName.Items.Add(myReader.GetString("Name"));
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public CashierHomePage(int i)
         {
             InitializeComponent();
@@ -51,7 +94,10 @@ namespace Sales_Inventory
 
         private void CashierHomePage_Load(object sender, EventArgs e)
         {
-
+            PopulateItemName();
+            var bindinglist = new BindingList<transaction>(transactions);
+            var source = new BindingSource(bindinglist, null);
+            dataGridView1.DataSource = source;
         }
 
         private void buttonResetTransaction_Click(object sender, EventArgs e)
@@ -62,6 +108,14 @@ namespace Sales_Inventory
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            transactions.Add(new transaction(comboBoxItemName.Text, (int)numericUpDownQuantity.Value));
+            var bindinglist = new BindingList<transaction>(transactions);
+            var source = new BindingSource(bindinglist, null);
+            dataGridView1.DataSource = source;
         }
     }
 }

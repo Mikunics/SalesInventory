@@ -155,6 +155,9 @@ namespace Sales_Inventory
             // 
             // comboBoxItemName
             // 
+            this.comboBoxItemName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxItemName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxItemName.FormattingEnabled = true;
             this.comboBoxItemName.Location = new System.Drawing.Point(98, 311);
             this.comboBoxItemName.Name = "comboBoxItemName";
@@ -182,9 +185,19 @@ namespace Sales_Inventory
             // numericUpDownQuantity
             // 
             this.numericUpDownQuantity.Location = new System.Drawing.Point(98, 341);
+            this.numericUpDownQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDownQuantity.Name = "numericUpDownQuantity";
             this.numericUpDownQuantity.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownQuantity.TabIndex = 14;
+            this.numericUpDownQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // buttonAdd
             // 
@@ -194,6 +207,7 @@ namespace Sales_Inventory
             this.buttonAdd.TabIndex = 15;
             this.buttonAdd.Text = "Add Item";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelName
             // 
