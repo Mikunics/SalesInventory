@@ -164,7 +164,6 @@ namespace Sales_Inventory
         {
             PopulateItemName();
             StartTimer();
-            labelTime.Visible = true;
             var bindingList = new BindingList<transaction>(transactions);
             dataGridView1.DataSource = bindingList;
         }

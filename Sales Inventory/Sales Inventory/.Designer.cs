@@ -198,7 +198,6 @@ namespace Sales_Inventory
             this.labelTime.Size = new System.Drawing.Size(38, 17);
             this.labelTime.TabIndex = 18;
             this.labelTime.Text = "label";
-            this.labelTime.Visible = false;
             // 
             // CashierHomePage
             // 
