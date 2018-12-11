@@ -13,6 +13,20 @@ namespace Sales_Inventory
 {
     public partial class CashierHomePage : Form
     {
+        System.Windows.Forms.Timer t = null;
+        private void StartTimer()
+        {
+            t = new System.Windows.Forms.Timer();
+            t.Interval = 1000;
+            t.Tick += new EventHandler(t_Tick);
+            t.Enabled = true;
+        }
+
+        void t_Tick(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now.ToString();
+        }
+
         public class transaction
         {
             private string _ItemName;
@@ -149,6 +163,8 @@ namespace Sales_Inventory
         private void CashierHomePage_Load(object sender, EventArgs e)
         {
             PopulateItemName();
+            StartTimer();
+            labelTime.Visible = true;
             var bindingList = new BindingList<transaction>(transactions);
             dataGridView1.DataSource = bindingList;
         }

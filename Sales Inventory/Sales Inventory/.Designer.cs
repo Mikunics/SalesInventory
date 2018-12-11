@@ -29,8 +29,6 @@ namespace Sales_Inventory
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonEndTransaction = new System.Windows.Forms.Button();
             this.buttonCancelTransaction = new System.Windows.Forms.Button();
@@ -43,8 +41,6 @@ namespace Sales_Inventory
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelDate = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
@@ -55,47 +51,29 @@ namespace Sales_Inventory
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 10);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 10);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(573, 296);
+            this.dataGridView1.Size = new System.Drawing.Size(559, 297);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(590, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 17);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Cashier:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(590, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Time:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(589, 67);
+            this.label4.Location = new System.Drawing.Point(576, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 17);
+            this.label4.Size = new System.Drawing.Size(105, 17);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Date:";
+            this.label4.Text = "Date and Time:";
             // 
             // buttonEndTransaction
             // 
-            this.buttonEndTransaction.Location = new System.Drawing.Point(12, 370);
+            this.buttonEndTransaction.Location = new System.Drawing.Point(11, 370);
             this.buttonEndTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEndTransaction.Name = "buttonEndTransaction";
-            this.buttonEndTransaction.Size = new System.Drawing.Size(187, 84);
+            this.buttonEndTransaction.Size = new System.Drawing.Size(284, 84);
             this.buttonEndTransaction.TabIndex = 4;
             this.buttonEndTransaction.Text = "End Current Transcation";
             this.buttonEndTransaction.UseVisualStyleBackColor = true;
@@ -103,10 +81,10 @@ namespace Sales_Inventory
             // 
             // buttonCancelTransaction
             // 
-            this.buttonCancelTransaction.Location = new System.Drawing.Point(204, 370);
+            this.buttonCancelTransaction.Location = new System.Drawing.Point(579, 258);
             this.buttonCancelTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelTransaction.Name = "buttonCancelTransaction";
-            this.buttonCancelTransaction.Size = new System.Drawing.Size(187, 84);
+            this.buttonCancelTransaction.Size = new System.Drawing.Size(158, 49);
             this.buttonCancelTransaction.TabIndex = 5;
             this.buttonCancelTransaction.Text = "Cancel Previous Transaction";
             this.buttonCancelTransaction.UseVisualStyleBackColor = true;
@@ -114,10 +92,10 @@ namespace Sales_Inventory
             // 
             // buttonResetTransaction
             // 
-            this.buttonResetTransaction.Location = new System.Drawing.Point(397, 370);
+            this.buttonResetTransaction.Location = new System.Drawing.Point(301, 370);
             this.buttonResetTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonResetTransaction.Name = "buttonResetTransaction";
-            this.buttonResetTransaction.Size = new System.Drawing.Size(187, 84);
+            this.buttonResetTransaction.Size = new System.Drawing.Size(269, 84);
             this.buttonResetTransaction.TabIndex = 6;
             this.buttonResetTransaction.Text = "Reset Current Transaction";
             this.buttonResetTransaction.UseVisualStyleBackColor = true;
@@ -125,10 +103,10 @@ namespace Sales_Inventory
             // 
             // buttonSalesInventory
             // 
-            this.buttonSalesInventory.Location = new System.Drawing.Point(594, 215);
+            this.buttonSalesInventory.Location = new System.Drawing.Point(579, 106);
             this.buttonSalesInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalesInventory.Name = "buttonSalesInventory";
-            this.buttonSalesInventory.Size = new System.Drawing.Size(145, 50);
+            this.buttonSalesInventory.Size = new System.Drawing.Size(160, 50);
             this.buttonSalesInventory.TabIndex = 7;
             this.buttonSalesInventory.Text = "Access Sales Inventory";
             this.buttonSalesInventory.UseVisualStyleBackColor = true;
@@ -136,10 +114,10 @@ namespace Sales_Inventory
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(594, 393);
+            this.buttonLogout.Location = new System.Drawing.Point(579, 414);
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(145, 38);
+            this.buttonLogout.Size = new System.Drawing.Size(158, 38);
             this.buttonLogout.TabIndex = 8;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -147,10 +125,10 @@ namespace Sales_Inventory
             // 
             // buttonAdmin
             // 
-            this.buttonAdmin.Location = new System.Drawing.Point(594, 289);
+            this.buttonAdmin.Location = new System.Drawing.Point(579, 180);
             this.buttonAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdmin.Name = "buttonAdmin";
-            this.buttonAdmin.Size = new System.Drawing.Size(145, 49);
+            this.buttonAdmin.Size = new System.Drawing.Size(158, 49);
             this.buttonAdmin.TabIndex = 9;
             this.buttonAdmin.Text = "Access Admin Controls";
             this.buttonAdmin.UseVisualStyleBackColor = true;
@@ -179,7 +157,7 @@ namespace Sales_Inventory
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 344);
+            this.label2.Location = new System.Drawing.Point(13, 343);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 13;
@@ -204,40 +182,23 @@ namespace Sales_Inventory
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(224, 340);
+            this.buttonAdd.Location = new System.Drawing.Point(397, 312);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(167, 25);
+            this.buttonAdd.Size = new System.Drawing.Size(173, 53);
             this.buttonAdd.TabIndex = 15;
             this.buttonAdd.Text = "Add Item";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(592, 31);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(46, 17);
-            this.labelName.TabIndex = 16;
-            this.labelName.Text = "label6";
-            // 
-            // labelDate
-            // 
-            this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(592, 88);
-            this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(46, 17);
-            this.labelDate.TabIndex = 17;
-            this.labelDate.Text = "label7";
-            // 
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.Location = new System.Drawing.Point(592, 147);
+            this.labelTime.Location = new System.Drawing.Point(576, 43);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(46, 17);
+            this.labelTime.Size = new System.Drawing.Size(38, 17);
             this.labelTime.TabIndex = 18;
-            this.labelTime.Text = "label8";
+            this.labelTime.Text = "label";
+            this.labelTime.Visible = false;
             // 
             // CashierHomePage
             // 
@@ -245,8 +206,6 @@ namespace Sales_Inventory
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 463);
             this.Controls.Add(this.labelTime);
-            this.Controls.Add(this.labelDate);
-            this.Controls.Add(this.labelName);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.numericUpDownQuantity);
             this.Controls.Add(this.label2);
@@ -259,10 +218,8 @@ namespace Sales_Inventory
             this.Controls.Add(this.buttonCancelTransaction);
             this.Controls.Add(this.buttonEndTransaction);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "CashierHomePage";
             this.Text = "Cashier Home";
             this.Load += new System.EventHandler(this.CashierHomePage_Load);
@@ -276,8 +233,6 @@ namespace Sales_Inventory
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonEndTransaction;
         private System.Windows.Forms.Button buttonCancelTransaction;
@@ -290,8 +245,6 @@ namespace Sales_Inventory
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelTime;
     }
 }
