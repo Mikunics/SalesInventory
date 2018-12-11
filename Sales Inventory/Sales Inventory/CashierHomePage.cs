@@ -40,7 +40,38 @@ namespace Sales_Inventory
         private bool RecordTransaction()
         {
             // Records to database a finished transaction
-            return false;
+            for (int i = 0; i < transactions.Count; i++)
+            {
+                string connectionString = ConnectionString.Connection;
+                string query1 = "SELECT ItemCode, price FROM item_catalog WHERE Name = '" + transactions[i].ItemName + "'";
+
+                MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+                MySqlCommand databaseCommand1 = new MySqlCommand(query1, databaseConnection);
+                databaseCommand1.CommandTimeout = 60;
+
+                try
+                {
+                    databaseConnection.Open();
+                    MySqlDataReader myReader1 = databaseCommand1.ExecuteReader();
+                    myReader1.Read();
+                    int ItemCode = myReader1.GetInt32("ItemCode");
+                    float price = myReader1.GetFloat("price");
+                    myReader1.Close();
+                    string query2 = "INSERT INTO sales_history(ID, item_code, price, quantity) VALUES (NULL,'"+ ItemCode +"','"+ price +"','"+ transactions[i].Quantity +"')";
+                    MySqlCommand databaseCommand2 = new MySqlCommand(query2, databaseConnection);
+                    databaseCommand2.CommandTimeout = 60;
+                    MySqlDataReader myReader2 = databaseCommand2.ExecuteReader();
+                    databaseConnection.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                    return false;
+                }
+            }
+            MessageBox.Show("Successfully added transaction into database");
+            return true;
         }
 
         private void PopulateItemName()
@@ -90,6 +121,7 @@ namespace Sales_Inventory
             EndTransaction.ShowDialog();
             if(EndTransaction.DialogResult == DialogResult.OK)
             {
+                RecordTransaction();
                 transactions.Clear();
                 var bindinglist = new BindingList<transaction>(transactions);
                 dataGridView1.DataSource = bindinglist;
