@@ -13,16 +13,17 @@ namespace Sales_Inventory
 {
     public partial class CashierHomePage : Form
     {
-        class transaction
+        public class transaction
         {
             private string _ItemName;
             private int _quantity;
+            [System.ComponentModel.DisplayName("Item Name")]
             public string ItemName
             {
                 get { return _ItemName; }
                 set { _ItemName = value; }
             }
-            public int quantity
+            public int Quantity
             {
                 get { return _quantity; }
                 set { _quantity = value; }
@@ -31,11 +32,16 @@ namespace Sales_Inventory
             public transaction(string a, int i)
             {
                 ItemName = a;
-                quantity = i;
+                Quantity = i;
             }
         }
         List<transaction> transactions = new List<transaction>();
 
+        private bool RecordTransaction()
+        {
+            // Records to database a finished transaction
+            return false;
+        }
 
         private void PopulateItemName()
         {
@@ -82,6 +88,12 @@ namespace Sales_Inventory
         {
             Form EndTransaction = new EndTransactionPage();
             EndTransaction.ShowDialog();
+            if(EndTransaction.DialogResult == DialogResult.OK)
+            {
+                transactions.Clear();
+                var bindinglist = new BindingList<transaction>(transactions);
+                dataGridView1.DataSource = bindinglist;
+            }
         }
 
         private void buttonCancelTransaction_Click(object sender, EventArgs e)
@@ -106,13 +118,14 @@ namespace Sales_Inventory
         {
             PopulateItemName();
             var bindingList = new BindingList<transaction>(transactions);
-            var source = new BindingSource(bindingList, null);
-            dataGridView1.DataSource = source;
+            dataGridView1.DataSource = bindingList;
         }
 
         private void buttonResetTransaction_Click(object sender, EventArgs e)
         {
-
+            transactions.Clear();
+            var bindinglist = new BindingList<transaction>(transactions);
+            dataGridView1.DataSource = bindinglist;
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -123,7 +136,8 @@ namespace Sales_Inventory
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             transactions.Add(new transaction(comboBoxItemName.Text, (int)numericUpDownQuantity.Value));
-            
+            var bindinglist = new BindingList<transaction>(transactions);
+            dataGridView1.DataSource = bindinglist;
         }
     }
 }
