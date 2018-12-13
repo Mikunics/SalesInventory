@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Sales_Inventory
 {
@@ -19,7 +20,26 @@ namespace Sales_Inventory
 
         private bool GenerateReport(DateTime To, DateTime From)
         {
-            
+            string connectionString = ConnectionString.Connection;
+            string query = "SELECT DISTINCT name";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
+            databaseCommand.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = databaseCommand.ExecuteReader();
+                databaseConnection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+                return false;
+            }
             return false;
         }
 
