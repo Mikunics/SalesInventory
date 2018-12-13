@@ -21,18 +21,21 @@ namespace Sales_Inventory
         private bool GenerateReport(DateTime To, DateTime From)
         {
             string connectionString = ConnectionString.Connection;
-            string query = "SELECT DISTINCT name";
-
+            string query = "SELECT DISTINCT item_code FROM sales_history";
+            int uniqueItems = 0;
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
             databaseCommand.CommandTimeout = 60;
-
+            List<int> existingItemCodes = new List<int>();
             try
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader = databaseCommand.ExecuteReader();
+                while (myReader.HasRows)
+                {
+                    existingItemCodes.Add(myReader.GetInt32("item_code"));
+                }
                 databaseConnection.Close();
-                return true;
             }
             catch (Exception ex)
             {
@@ -40,7 +43,11 @@ namespace Sales_Inventory
                 MessageBox.Show(ex.Message);
                 return false;
             }
-            return false;
+            for(int i = 0; i < existingItemCodes.Count - 1; i++)
+            {
+                query = "SELECT quantity, price FROM sales_history WHERE item_code = '" + i + "'";
+            }
+
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
