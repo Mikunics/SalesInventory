@@ -17,8 +17,25 @@ namespace Sales_Inventory
             InitializeComponent();
         }
 
+        private bool GenerateReport(DateTime To, DateTime From)
+        {
+            
+            return false;
+        }
+
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
+            if (radioButtonDaily.Checked)
+            {
+                DateTime To = DateTime.Today;
+                DateTime From = DateTime.Today;
+                GenerateReport(To, From);
+            }else if (radioButtonCustom.Checked)
+            {
+                DateTime To = dateTimePickerTo.Value;
+                DateTime From = dateTimePickerFrom.Value;
+                GenerateReport(To, From);
+            }
             this.DialogResult = DialogResult.OK;
             this.Dispose();
         }

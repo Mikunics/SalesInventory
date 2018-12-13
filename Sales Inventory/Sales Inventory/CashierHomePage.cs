@@ -114,6 +114,7 @@ namespace Sales_Inventory
                 // Show any error message.
                 MessageBox.Show(ex.Message);
             }
+            comboBoxItemName.SelectedIndex = 0;
         }
 
         public CashierHomePage(int i)
@@ -185,6 +186,7 @@ namespace Sales_Inventory
             transactions.Add(new transaction(comboBoxItemName.Text, (int)numericUpDownQuantity.Value));
             var bindinglist = new BindingList<transaction>(transactions);
             dataGridView1.DataSource = bindinglist;
+            numericUpDownQuantity.Value = 1;
         }
     }
 }
