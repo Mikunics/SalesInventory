@@ -43,7 +43,7 @@ namespace Sales_Inventory
             // buttonConfirm
             // 
             this.buttonConfirm.Location = new System.Drawing.Point(509, 112);
-            this.buttonConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(267, 28);
             this.buttonConfirm.TabIndex = 24;
@@ -54,20 +54,20 @@ namespace Sales_Inventory
             // radioButtonCustom
             // 
             this.radioButtonCustom.AutoSize = true;
-            this.radioButtonCustom.Location = new System.Drawing.Point(276, 55);
-            this.radioButtonCustom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonCustom.Location = new System.Drawing.Point(229, 55);
+            this.radioButtonCustom.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonCustom.Name = "radioButtonCustom";
             this.radioButtonCustom.Size = new System.Drawing.Size(123, 21);
             this.radioButtonCustom.TabIndex = 23;
-            this.radioButtonCustom.TabStop = true;
             this.radioButtonCustom.Text = "Custom Report";
             this.radioButtonCustom.UseVisualStyleBackColor = true;
             // 
             // radioButtonDaily
             // 
             this.radioButtonDaily.AutoSize = true;
+            this.radioButtonDaily.Checked = true;
             this.radioButtonDaily.Location = new System.Drawing.Point(19, 55);
-            this.radioButtonDaily.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonDaily.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonDaily.Name = "radioButtonDaily";
             this.radioButtonDaily.Size = new System.Drawing.Size(107, 21);
             this.radioButtonDaily.TabIndex = 21;
@@ -78,7 +78,7 @@ namespace Sales_Inventory
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(11, 112);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(217, 28);
             this.button4.TabIndex = 20;
@@ -89,7 +89,7 @@ namespace Sales_Inventory
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(441, 80);
+            this.label4.Location = new System.Drawing.Point(410, 78);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 17);
@@ -99,7 +99,7 @@ namespace Sales_Inventory
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(441, 39);
+            this.label3.Location = new System.Drawing.Point(395, 32);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 17);
@@ -110,7 +110,7 @@ namespace Sales_Inventory
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(183, 47);
+            this.label2.Location = new System.Drawing.Point(155, 47);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 29);
@@ -129,21 +129,21 @@ namespace Sales_Inventory
             // 
             // dateTimePickerTo
             // 
-            this.dateTimePickerTo.CustomFormat = "DD/MM/YYYY";
-            this.dateTimePickerTo.Location = new System.Drawing.Point(509, 73);
-            this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerTo.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
+            this.dateTimePickerTo.Location = new System.Drawing.Point(447, 73);
+            this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
-            this.dateTimePickerTo.Size = new System.Drawing.Size(265, 22);
+            this.dateTimePickerTo.Size = new System.Drawing.Size(327, 22);
             this.dateTimePickerTo.TabIndex = 15;
             this.dateTimePickerTo.Value = new System.DateTime(2018, 12, 13, 0, 0, 0, 0);
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.CustomFormat = "DD/MM/YYYY";
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(509, 32);
-            this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFrom.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(447, 32);
+            this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
-            this.dateTimePickerFrom.Size = new System.Drawing.Size(265, 22);
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(329, 22);
             this.dateTimePickerFrom.TabIndex = 14;
             this.dateTimePickerFrom.Value = new System.DateTime(2018, 12, 13, 0, 0, 0, 0);
             // 
@@ -162,9 +162,10 @@ namespace Sales_Inventory
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerTo);
             this.Controls.Add(this.dateTimePickerFrom);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalesReport";
             this.Text = "Sales Report";
+            this.Load += new System.EventHandler(this.SalesReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

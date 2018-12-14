@@ -32,11 +32,14 @@ namespace Sales_Inventory
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader = databaseCommand.ExecuteReader();
-                while (myReader.HasRows)
+                if(myReader.HasRows)
                 {
-                    existingItemCodes.Add(myReader.GetInt32("item_code"));
+                    while (myReader.Read())
+                    {
+                        existingItemCodes.Add(myReader.GetInt32("item_code"));
+                    }
                 }
-                myReader.Close();
+                databaseConnection.Close();
             }
             catch (Exception ex)
             {
@@ -45,9 +48,10 @@ namespace Sales_Inventory
                 return false;
             }
             float Total = 0;
-            for (int i = 0; i < existingItemCodes.Count - 1; i++)
+            for (int i = 0; i < existingItemCodes.Count; i++)
             {
-                query = "SELECT price, quantity FROM sales_history WHERE item_code = '" + existingItemCodes[i] + "' AND BETWEEN '"+From.ToShortDateString()+"' AND '"+To.ToShortDateString()+"'";
+                databaseConnection.Open();
+                query = "SELECT price, quantity FROM sales_history WHERE item_code = '" + existingItemCodes[i] + "' AND date_and_time BETWEEN '" + From.ToString("F") +"' AND '"+ To.ToString("F") +"'";
                 string query2 = "SELECT Name FROM item_catalog WHERE ItemCode = '" + existingItemCodes[i] + "'";
                 databaseCommand = new MySqlCommand(query, databaseConnection);
                 int curQuantity = 0;
@@ -55,20 +59,22 @@ namespace Sales_Inventory
                 try
                 {
                     MySqlDataReader myReader = databaseCommand.ExecuteReader();
-                    while (myReader.HasRows)
+                    if (myReader.HasRows)
                     {
-                        myReader.Read();
-                        curQuantity += myReader.GetInt32("quantity");
-                        curTotal += myReader.GetFloat("price") * myReader.GetInt32("quantity");
+                        while (myReader.Read())
+                        {
+                            curQuantity += myReader.GetInt32("quantity");
+                            curTotal += myReader.GetFloat("price") * myReader.GetInt32("quantity");
+                        }
                     }
                     myReader.Close();
                     databaseCommand = new MySqlCommand(query2, databaseConnection);
-                    myReader = databaseCommand.ExecuteReader();
+                    MySqlDataReader myReader2 = databaseCommand.ExecuteReader();
                     string itemname = "Error";
-                    if (myReader.HasRows)
+                    if (myReader2.HasRows)
                     {
-                        myReader.Read();
-                        itemname = myReader.GetString("Name");
+                        myReader2.Read();
+                        itemname = myReader2.GetString("Name");
                     }
                     string record = $"{itemname} has sold {curQuantity} units to make a total of {curTotal}.";
                     output.Add(record);
@@ -79,11 +85,13 @@ namespace Sales_Inventory
                     MessageBox.Show(ex.Message);
                     return false;
                 }
+                databaseConnection.Close();
             }
             output.Add($"You have made a total of {Total} from {From.ToString("D")} to {To.ToString("D")}");
             try
             {
                 File.WriteAllLines(@"C:\Users\walte\Desktop\SalesReport.txt", output);
+                MessageBox.Show("Successfuly created sales report in Desktop!");
                 return true;
             }
             catch (Exception ex)
@@ -114,6 +122,12 @@ namespace Sales_Inventory
         {
             this.DialogResult = DialogResult.Cancel;
             this.Dispose();
+        }
+
+        private void SalesReport_Load(object sender, EventArgs e)
+        {
+            dateTimePickerFrom.Format = DateTimePickerFormat.Custom;
+            dateTimePickerTo.Format = DateTimePickerFormat.Custom;
         }
     }
 }
