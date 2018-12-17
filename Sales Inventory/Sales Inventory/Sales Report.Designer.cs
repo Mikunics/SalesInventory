@@ -135,7 +135,7 @@ namespace Sales_Inventory
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(327, 22);
             this.dateTimePickerTo.TabIndex = 15;
-            this.dateTimePickerTo.Value = new System.DateTime(2018, 12, 13, 0, 0, 0, 0);
+            this.dateTimePickerTo.Value = new System.DateTime(2018, 12, 17, 9, 36, 20, 0);
             // 
             // dateTimePickerFrom
             // 
@@ -145,7 +145,7 @@ namespace Sales_Inventory
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(329, 22);
             this.dateTimePickerFrom.TabIndex = 14;
-            this.dateTimePickerFrom.Value = new System.DateTime(2018, 12, 13, 0, 0, 0, 0);
+            this.dateTimePickerFrom.Value = new System.DateTime(2018, 12, 17, 9, 36, 7, 0);
             // 
             // SalesReport
             // 

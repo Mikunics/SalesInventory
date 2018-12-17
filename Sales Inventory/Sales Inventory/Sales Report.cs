@@ -51,7 +51,7 @@ namespace Sales_Inventory
             for (int i = 0; i < existingItemCodes.Count; i++)
             {
                 databaseConnection.Open();
-                query = "SELECT price, quantity FROM sales_history WHERE item_code = '" + existingItemCodes[i] + "' AND date_and_time BETWEEN '" + From.ToString("F") +"' AND '"+ To.ToString("F") +"'";
+                query = "SELECT price, quantity FROM sales_history WHERE item_code = '" + existingItemCodes[i] + "' AND date_and_time BETWEEN '" + From.ToString("u") +"' AND '"+ To.ToString("u") +"'";
                 string query2 = "SELECT Name FROM item_catalog WHERE ItemCode = '" + existingItemCodes[i] + "'";
                 databaseCommand = new MySqlCommand(query, databaseConnection);
                 int curQuantity = 0;
@@ -87,7 +87,7 @@ namespace Sales_Inventory
                 }
                 databaseConnection.Close();
             }
-            output.Add($"You have made a total of {Total} from {From.ToString("D")} to {To.ToString("D")}");
+            output.Add($"You have made a total of {Total} from {From.ToString("U")} to {To.ToString("U")}");
             try
             {
                 File.WriteAllLines(@"C:\Users\walte\Desktop\SalesReport.txt", output);
@@ -105,7 +105,7 @@ namespace Sales_Inventory
         {
             if (radioButtonDaily.Checked)
             {
-                DateTime To = DateTime.Today;
+                DateTime To = DateTime.Today.AddDays(1).AddTicks(-1);
                 DateTime From = DateTime.Today;
                 GenerateReport(To, From);
             }else if (radioButtonCustom.Checked)

@@ -31,7 +31,10 @@ namespace Sales_Inventory
         {
             private string _ItemName;
             private int _quantity;
-            [System.ComponentModel.DisplayName("Item Name")]
+            private float _pricePerUnit;
+            private float _totalPrice;
+
+            [DisplayName("Item Name")]
             public string ItemName
             {
                 get { return _ItemName; }
@@ -41,6 +44,18 @@ namespace Sales_Inventory
             {
                 get { return _quantity; }
                 set { _quantity = value; }
+            }
+            [DisplayName("Price Per Unit")]
+            public float PricePerUnit
+            {
+                get { return _pricePerUnit; }
+                set { _pricePerUnit = value; }
+            }
+            [DisplayName("Total Price")]
+            public float TotalPrice
+            {
+                get { return _totalPrice; }
+                set { _totalPrice = value; }
             }
 
             public transaction(string a, int i)
