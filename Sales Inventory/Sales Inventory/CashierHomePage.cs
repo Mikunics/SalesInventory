@@ -171,7 +171,7 @@ namespace Sales_Inventory
         private void buttonEndTransaction_Click(object sender, EventArgs e)
         {
             Form EndTransaction = new EndTransactionPage();
-            EndTransaction.ShowDialog();
+            EndTransaction.ShowDialog(transactions);
             if(EndTransaction.DialogResult == DialogResult.OK)
             {
                 RecordTransaction();

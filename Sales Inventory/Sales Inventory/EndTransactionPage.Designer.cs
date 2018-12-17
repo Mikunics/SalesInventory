@@ -101,9 +101,9 @@
             this.labelDue.AutoSize = true;
             this.labelDue.Location = new System.Drawing.Point(170, 34);
             this.labelDue.Name = "labelDue";
-            this.labelDue.Size = new System.Drawing.Size(38, 17);
+            this.labelDue.Size = new System.Drawing.Size(44, 17);
             this.labelDue.TabIndex = 7;
-            this.labelDue.Text = "label";
+            this.labelDue.Text = "00.00";
             this.labelDue.Visible = false;
             // 
             // textBoxPaid
@@ -112,15 +112,17 @@
             this.textBoxPaid.Name = "textBoxPaid";
             this.textBoxPaid.Size = new System.Drawing.Size(169, 22);
             this.textBoxPaid.TabIndex = 8;
+            this.textBoxPaid.TextChanged += new System.EventHandler(this.textBoxPaid_TextChanged);
+            this.textBoxPaid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPaid_KeyPress);
             // 
             // labelChange
             // 
             this.labelChange.AutoSize = true;
             this.labelChange.Location = new System.Drawing.Point(172, 122);
             this.labelChange.Name = "labelChange";
-            this.labelChange.Size = new System.Drawing.Size(38, 17);
+            this.labelChange.Size = new System.Drawing.Size(44, 17);
             this.labelChange.TabIndex = 9;
-            this.labelChange.Text = "label";
+            this.labelChange.Text = "00.00";
             this.labelChange.Visible = false;
             // 
             // EndTransactionPage
