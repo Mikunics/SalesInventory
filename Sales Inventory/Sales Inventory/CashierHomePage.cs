@@ -11,12 +11,13 @@ using MySql.Data.MySqlClient;
 
 namespace Sales_Inventory
 {
+
     public partial class CashierHomePage : Form
     {
-        System.Windows.Forms.Timer t = null;
+        Timer t = null;
         private void StartTimer()
         {
-            t = new System.Windows.Forms.Timer();
+            t = new Timer();
             t.Interval = 1000;
             t.Tick += new EventHandler(t_Tick);
             t.Enabled = true;
@@ -25,6 +26,26 @@ namespace Sales_Inventory
         void t_Tick(object sender, EventArgs e)
         {
             labelTime.Text = DateTime.Now.ToString();
+        }
+
+        private static float getItemPrice(string ItemName)
+        {
+            string query = "SELECT price FROM item_catalog WHERE Name = '" + ItemName + "'";
+            MySqlConnection databaseConnection = new MySqlConnection(ConnectionString.Connection);
+            MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
+            databaseCommand.CommandTimeout = 60;
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = databaseCommand.ExecuteReader();
+                myReader.Read();
+                return myReader.GetFloat("price");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
         }
 
         public class transaction
@@ -62,9 +83,11 @@ namespace Sales_Inventory
             {
                 ItemName = a;
                 Quantity = i;
+                PricePerUnit = getItemPrice(ItemName);
+                TotalPrice = PricePerUnit * Quantity;
             }
         }
-        List<transaction> transactions = new List<transaction>();
+        public List<transaction> transactions = new List<transaction>();
 
         private bool RecordTransaction()
         {
