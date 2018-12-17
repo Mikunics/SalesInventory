@@ -12,65 +12,40 @@ namespace Sales_Inventory
 {
     public partial class EndTransactionPage : Form
     {
-        public class transaction
-        {
-            private string _ItemName;
-            private int _quantity;
-            private float _pricePerUnit;
-            private float _totalPrice;
 
-            [DisplayName("Item Name")]
-            public string ItemName
-            {
-                get { return _ItemName; }
-                set { _ItemName = value; }
-            }
-            public int Quantity
-            {
-                get { return _quantity; }
-                set { _quantity = value; }
-            }
-            [DisplayName("Price Per Unit")]
-            public float PricePerUnit
-            {
-                get { return _pricePerUnit; }
-                set { _pricePerUnit = value; }
-            }
-            [DisplayName("Total Price")]
-            public float TotalPrice
-            {
-                get { return _totalPrice; }
-                set { _totalPrice = value; }
-            }
-        }
-        private List<transaction> transactions;
+        float Total = 0, Paid = 0, Change = 0;
+
         public EndTransactionPage()
         {
             InitializeComponent();
         }
 
-        public EndTransactionPage(List<transaction> list)
+        public EndTransactionPage(float due) : this()
         {
             InitializeComponent();
-            transactions = list;
+            Total = due;
         }
-
-        float Total = 0, Paid = 0, Change = 0;
 
         private void EndTransactionPage_Load(object sender, EventArgs e)
         {
-            for(int i = 0; i < transactions.Count; i++)
-            {
-                Total += transactions[i].TotalPrice;
-            }
-            labelDue.Text = Total.ToString();
+            labelDue.Text = Total.ToString("0.00");
+            labelDue.Visible = true;
         }
 
         private void textBoxPaid_TextChanged(object sender, EventArgs e)
         {
-            Paid = float.Parse(textBoxPaid.Text);
-            Change = Paid - Total;
-            labelChange.Text = Change.ToString();
+            try
+            {
+                Paid = Single.Parse(textBoxPaid.Text);
+                Change = Paid - Total;
+                labelChange.Text = Change.ToString("0.00");
+                labelChange.Visible = true;
+            }
+
+            catch
+            {
+
+            }
         }
 
         private void textBoxPaid_KeyPress(object sender, KeyPressEventArgs e)

@@ -87,7 +87,7 @@ namespace Sales_Inventory
                 TotalPrice = PricePerUnit * Quantity;
             }
         }
-        public List<transaction> transactions = new List<transaction>();
+        private List<transaction> transactions = new List<transaction>();
 
         private bool RecordTransaction()
         {
@@ -155,6 +155,16 @@ namespace Sales_Inventory
             comboBoxItemName.SelectedIndex = 0;
         }
 
+        private float getTotal()
+        {
+            float total = 0;
+            for(int i = 0; i < transactions.Count; i++)
+            {
+                total += transactions[i].TotalPrice;
+            }
+            return total;
+        }
+
         public CashierHomePage(int i)
         {
             InitializeComponent();
@@ -170,8 +180,8 @@ namespace Sales_Inventory
 
         private void buttonEndTransaction_Click(object sender, EventArgs e)
         {
-            Form EndTransaction = new EndTransactionPage();
-            EndTransaction.ShowDialog(transactions);
+            Form EndTransaction = new EndTransactionPage(getTotal());
+            EndTransaction.ShowDialog();
             if(EndTransaction.DialogResult == DialogResult.OK)
             {
                 RecordTransaction();
