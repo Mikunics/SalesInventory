@@ -20,8 +20,8 @@ namespace Sales_Inventory
             InitializeComponent();
         }
 
-        public EndTransactionPage(float due) : this()
-        {
+        public EndTransactionPage(float due)
+        { 
             InitializeComponent();
             Total = due;
         }
@@ -34,17 +34,14 @@ namespace Sales_Inventory
 
         private void textBoxPaid_TextChanged(object sender, EventArgs e)
         {
-            try
+            bool sucess = float.TryParse(textBoxPaid.Text, out float i);
+            if (sucess)
             {
-                Paid = Single.Parse(textBoxPaid.Text);
-                Change = Paid - Total;
+                labelChange.Visible = false;
+                Paid = i;
+                Change = (Paid - Total);
                 labelChange.Text = Change.ToString("0.00");
                 labelChange.Visible = true;
-            }
-
-            catch
-            {
-
             }
         }
 

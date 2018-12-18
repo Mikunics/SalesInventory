@@ -108,10 +108,12 @@
             // 
             // textBoxPaid
             // 
+            this.textBoxPaid.HideSelection = false;
             this.textBoxPaid.Location = new System.Drawing.Point(172, 77);
             this.textBoxPaid.Name = "textBoxPaid";
             this.textBoxPaid.Size = new System.Drawing.Size(169, 22);
             this.textBoxPaid.TabIndex = 8;
+            this.textBoxPaid.Text = "00.00";
             this.textBoxPaid.TextChanged += new System.EventHandler(this.textBoxPaid_TextChanged);
             this.textBoxPaid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPaid_KeyPress);
             // 
