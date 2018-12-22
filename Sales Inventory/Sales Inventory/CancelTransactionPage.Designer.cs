@@ -38,26 +38,29 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 43);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 34);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(651, 409);
+            this.dataGridView1.Size = new System.Drawing.Size(579, 327);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(11, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 20);
+            this.label1.Size = new System.Drawing.Size(192, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Choose a transaction to void:";
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(12, 458);
+            this.buttonCancel.Location = new System.Drawing.Point(11, 366);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(322, 68);
+            this.buttonCancel.Size = new System.Drawing.Size(286, 54);
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -65,9 +68,10 @@
             // 
             // buttonConfirm
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(340, 458);
+            this.buttonConfirm.Location = new System.Drawing.Point(302, 366);
+            this.buttonConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(323, 68);
+            this.buttonConfirm.Size = new System.Drawing.Size(287, 54);
             this.buttonConfirm.TabIndex = 3;
             this.buttonConfirm.Text = "Confirm";
             this.buttonConfirm.UseVisualStyleBackColor = true;
@@ -75,15 +79,17 @@
             // 
             // CancelTransactionPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 538);
+            this.ClientSize = new System.Drawing.Size(600, 430);
             this.Controls.Add(this.buttonConfirm);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CancelTransactionPage";
             this.Text = "Cancel Transaction";
+            this.Load += new System.EventHandler(this.CancelTransactionPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
