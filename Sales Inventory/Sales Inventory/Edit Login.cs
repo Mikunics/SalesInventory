@@ -35,7 +35,7 @@ namespace Sales_Inventory
 
         private bool EditCredentials()
         {
-            // Updates specified ID credentials to the corresponding inputted username, password and access level
+            // Updates specified ID credentials to the corresponding inputed username, password and access level
 
             string hashed = GetStringSha256Hash(textBoxPassword.Text);
             string connectionString = ConnectionString.Connection;

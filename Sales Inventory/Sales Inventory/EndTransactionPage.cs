@@ -34,6 +34,8 @@ namespace Sales_Inventory
 
         private void textBoxPaid_TextChanged(object sender, EventArgs e)
         {
+            // everytime text in textboxPain is changed, change label updates correspondingly
+
             bool sucess = float.TryParse(textBoxPaid.Text, out float i);
             if (sucess)
             {
@@ -47,6 +49,7 @@ namespace Sales_Inventory
 
         private void textBoxPaid_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Formats input so that only numbers and decimal points can be entered in the program
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;

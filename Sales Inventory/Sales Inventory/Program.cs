@@ -21,6 +21,7 @@ namespace Sales_Inventory
 
             using (var Login = new Login())
             {
+                // Passes into CashierHomePage the access level of the authenticated user
                 var result = Login.ShowDialog();
                 if (result == DialogResult.OK)
                 {

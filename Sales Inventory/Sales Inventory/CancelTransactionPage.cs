@@ -20,6 +20,7 @@ namespace Sales_Inventory
 
         private bool DeleteTransaction()
         {
+            // Deletes all selected rows in the datagridview from the database
             for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
             {
                 string connectionString = ConnectionString.Connection;

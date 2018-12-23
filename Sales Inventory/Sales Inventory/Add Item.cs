@@ -20,6 +20,7 @@ namespace Sales_Inventory
 
         private bool AddNewItem()
         {
+            // Adds new item into item_catalog database
             string connectionString = ConnectionString.Connection;
             string query = "INSERT INTO item_catalog(ItemCode, Name, Price) VALUES (NULL,'" + textBoxItemName.Text + "', '"+textBoxItemPrice.Text+"')";
 

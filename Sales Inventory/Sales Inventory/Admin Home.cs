@@ -12,6 +12,8 @@ namespace Sales_Inventory
 {
     public partial class AdminHome : Form
     {
+        // Directory page for login module controls
+
         public AdminHome()
         {
             InitializeComponent();

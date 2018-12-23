@@ -21,6 +21,8 @@ namespace Sales_Inventory
 
         private bool GenerateReport(DateTime To, DateTime From)
         {
+            //Creates a summary report of all transactions between date "From" and date "To" and then proceeds to save it in .txt format in the desktop
+
             string connectionString = ConnectionString.Connection;
             string query = "SELECT DISTINCT item_code FROM sales_history";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -103,7 +105,7 @@ namespace Sales_Inventory
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            if (radioButtonDaily.Checked)
+            if (radioButtonDaily.Checked) // checks whether sales report to be created is daily or custom
             {
                 DateTime To = DateTime.Today.AddDays(1).AddTicks(-1);
                 DateTime From = DateTime.Today;

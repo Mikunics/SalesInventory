@@ -60,6 +60,8 @@ namespace Sales_Inventory
 
         private bool EditExistingItem()
         {
+            // edits a row in item_catalog given an ID
+
             string connectionString = ConnectionString.Connection;
             string query = "UPDATE item_catalog SET Name = '" + textBoxItemName.Text + "', Price = '" + textBoxPrice.Text + "' WHERE ItemCode = '" + textBoxItemCode.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);

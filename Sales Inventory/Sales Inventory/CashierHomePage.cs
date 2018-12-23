@@ -17,6 +17,7 @@ namespace Sales_Inventory
         Timer t = null;
         private void StartTimer()
         {
+            // starts the timer for the clock in the program
             t = new Timer();
             t.Interval = 1000;
             t.Tick += new EventHandler(t_Tick);
@@ -25,11 +26,13 @@ namespace Sales_Inventory
 
         void t_Tick(object sender, EventArgs e)
         {
+            // every tick updates the clock in the program through this function
             labelTime.Text = DateTime.Now.ToString();
         }
 
         private static float getItemPrice(string ItemName)
         {
+            // this gets the item price of an item from item_catalog given an item name
             string query = "SELECT price FROM item_catalog WHERE Name = '" + ItemName + "'";
             MySqlConnection databaseConnection = new MySqlConnection(ConnectionString.Connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
@@ -50,6 +53,7 @@ namespace Sales_Inventory
 
         public class transaction
         {
+            // class used to define a transaction within the cashier
             private string _ItemName;
             private int _quantity;
             private float _pricePerUnit;
@@ -91,7 +95,7 @@ namespace Sales_Inventory
 
         private bool RecordTransaction()
         {
-            // Records to database a finished transaction
+            // Records to sales_history a finished transaction
             for (int i = 0; i < transactions.Count; i++)
             {
                 string connectionString = ConnectionString.Connection;
@@ -128,6 +132,8 @@ namespace Sales_Inventory
 
         private void PopulateItemName()
         {
+            // Adds to the combolist all items currently existing in item_catalog
+
             string connectionString = ConnectionString.Connection;
             string query = "SELECT Name FROM item_catalog";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -157,6 +163,8 @@ namespace Sales_Inventory
 
         private float getTotal()
         {
+            // Gets the total price of all items inside tthe current transaction
+
             float total = 0;
             for(int i = 0; i < transactions.Count; i++)
             {
@@ -167,6 +175,8 @@ namespace Sales_Inventory
 
         public CashierHomePage(int i)
         {
+            // Initializes the page differently according to given access level
+
             InitializeComponent();
             if (i >= 2)
             {
@@ -180,6 +190,7 @@ namespace Sales_Inventory
 
         private void buttonEndTransaction_Click(object sender, EventArgs e)
         {
+            // Shows end transaction page, if end transaction page exits with state OK, then the RecordTransaction() is called and then the current transaction is reseted
             Form EndTransaction = new EndTransactionPage(getTotal());
             EndTransaction.ShowDialog();
             if(EndTransaction.DialogResult == DialogResult.OK)
@@ -211,6 +222,7 @@ namespace Sales_Inventory
 
         private void CashierHomePage_Load(object sender, EventArgs e)
         {
+            // Loads all existing items in item_catalog and starts the clock
             PopulateItemName();
             StartTimer();
             var bindingList = new BindingList<transaction>(transactions);
@@ -231,6 +243,7 @@ namespace Sales_Inventory
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            // adds a new transaction into the transaction list given chosen item in the combobox and quantity in the numericupdownbox
             transactions.Add(new transaction(comboBoxItemName.Text, (int)numericUpDownQuantity.Value));
             var bindinglist = new BindingList<transaction>(transactions);
             dataGridView1.DataSource = bindinglist;

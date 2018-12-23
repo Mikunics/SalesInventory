@@ -12,6 +12,8 @@ namespace Sales_Inventory
 {
     public partial class InventoryHome : Form
     {
+        // Main directory page for sales inventory module
+
         public InventoryHome()
         {
             InitializeComponent();

@@ -55,6 +55,8 @@ namespace Sales_Inventory
                     MessageBox.Show("You have input an invalid access level","Invalid Access Level",MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
             }
+
+            // This adds new credentials into login_module database
             string connectionString = ConnectionString.Connection;
             string hashed = GetStringSha256Hash(textBoxPassword.Text);
             string query = "INSERT INTO login_module(`id`, `username`, `password`, `accesslevel`) VALUES (NULL, '" + textBoxUsername.Text + "', '" + hashed + "', '" + accesslevel + "')";
