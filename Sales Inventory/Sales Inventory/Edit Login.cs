@@ -33,6 +33,30 @@ namespace Sales_Inventory
             }
         }
 
+        private bool DeleteCredentials()
+        {
+            string query = "DELETE FROM login_module WHERE id = '" + textBoxID.Text + "'";
+            string connectionString = ConnectionString.Connection;
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
+            databaseCommand.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = databaseCommand.ExecuteReader();
+                MessageBox.Show("Login Credentials Succesfully Deleted");
+                databaseConnection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
         private bool EditCredentials()
         {
             // Updates specified ID credentials to the corresponding inputed username, password and access level
@@ -186,6 +210,15 @@ namespace Sales_Inventory
                     default:
                         break;
                 }
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (DeleteCredentials())
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Dispose();
             }
         }
     }

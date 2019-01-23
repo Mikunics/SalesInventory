@@ -133,7 +133,7 @@ namespace Sales_Inventory
         private void PopulateItemName()
         {
             // Adds to the combolist all items currently existing in item_catalog
-
+            comboBoxItemName.Items.Clear();
             string connectionString = ConnectionString.Connection;
             string query = "SELECT Name FROM item_catalog";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -248,6 +248,15 @@ namespace Sales_Inventory
             var bindinglist = new BindingList<transaction>(transactions);
             dataGridView1.DataSource = bindinglist;
             numericUpDownQuantity.Value = 1;
+        }
+
+        private void CashierHomePage_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void CashierHomePage_Activated(object sender, EventArgs e)
+        {
+            PopulateItemName();
         }
     }
 }

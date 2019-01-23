@@ -58,6 +58,32 @@ namespace Sales_Inventory
             }
         }
 
+        private bool DeleteExistingItem()
+        {
+            // deletes a row in item_catalog given an ID
+            string connectionString = ConnectionString.Connection;
+            string query = "DELETE FROM item_catalog WHERE ItemCode = '" + textBoxItemCode.Text + "'";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand databaseCommand = new MySqlCommand(query, databaseConnection);
+            databaseCommand.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = databaseCommand.ExecuteReader();
+                MessageBox.Show("Item Succesfully Deleted");
+                databaseConnection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
         private bool EditExistingItem()
         {
             // edits a row in item_catalog given an ID
@@ -117,6 +143,15 @@ namespace Sales_Inventory
         private void EditItem_Load(object sender, EventArgs e)
         {
             LoadView();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (DeleteExistingItem())
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Dispose();
+            }
         }
     }
 }

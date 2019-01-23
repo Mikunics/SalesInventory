@@ -39,6 +39,7 @@ namespace Sales_Inventory
             this.textBoxItemName = new System.Windows.Forms.TextBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@ namespace Sales_Inventory
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 31);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(428, 310);
@@ -68,7 +69,7 @@ namespace Sales_Inventory
             // buttonCancel
             // 
             this.buttonCancel.Location = new System.Drawing.Point(16, 348);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(192, 28);
             this.buttonCancel.TabIndex = 2;
@@ -79,11 +80,11 @@ namespace Sales_Inventory
             // buttonConfirm
             // 
             this.buttonConfirm.Location = new System.Drawing.Point(576, 348);
-            this.buttonConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(192, 28);
             this.buttonConfirm.TabIndex = 3;
-            this.buttonConfirm.Text = "Confirm";
+            this.buttonConfirm.Text = "Edit";
             this.buttonConfirm.UseVisualStyleBackColor = true;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
@@ -120,7 +121,7 @@ namespace Sales_Inventory
             // textBoxItemCode
             // 
             this.textBoxItemCode.Location = new System.Drawing.Point(452, 82);
-            this.textBoxItemCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxItemCode.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxItemCode.Name = "textBoxItemCode";
             this.textBoxItemCode.Size = new System.Drawing.Size(313, 22);
             this.textBoxItemCode.TabIndex = 7;
@@ -128,7 +129,7 @@ namespace Sales_Inventory
             // textBoxItemName
             // 
             this.textBoxItemName.Location = new System.Drawing.Point(453, 175);
-            this.textBoxItemName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxItemName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxItemName.Name = "textBoxItemName";
             this.textBoxItemName.Size = new System.Drawing.Size(313, 22);
             this.textBoxItemName.TabIndex = 8;
@@ -136,15 +137,15 @@ namespace Sales_Inventory
             // textBoxPrice
             // 
             this.textBoxPrice.Location = new System.Drawing.Point(452, 263);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(313, 22);
             this.textBoxPrice.TabIndex = 9;
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Location = new System.Drawing.Point(311, 351);
-            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRefresh.Location = new System.Drawing.Point(216, 349);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(183, 26);
             this.buttonRefresh.TabIndex = 10;
@@ -152,11 +153,23 @@ namespace Sales_Inventory
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(407, 348);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(161, 28);
+            this.buttonDelete.TabIndex = 11;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // EditItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 389);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.textBoxItemName);
@@ -168,7 +181,7 @@ namespace Sales_Inventory
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditItem";
             this.Text = "Edit Item";
             this.Load += new System.EventHandler(this.EditItem_Load);
@@ -191,5 +204,6 @@ namespace Sales_Inventory
         private System.Windows.Forms.TextBox textBoxItemName;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

@@ -36,9 +36,10 @@ namespace Sales_Inventory
             // 
             // buttonSalesReport
             // 
-            this.buttonSalesReport.Location = new System.Drawing.Point(12, 12);
+            this.buttonSalesReport.Location = new System.Drawing.Point(16, 15);
+            this.buttonSalesReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSalesReport.Name = "buttonSalesReport";
-            this.buttonSalesReport.Size = new System.Drawing.Size(213, 36);
+            this.buttonSalesReport.Size = new System.Drawing.Size(284, 44);
             this.buttonSalesReport.TabIndex = 0;
             this.buttonSalesReport.Text = "Generate Sales Report";
             this.buttonSalesReport.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@ namespace Sales_Inventory
             // 
             // buttonSalesHistory
             // 
-            this.buttonSalesHistory.Location = new System.Drawing.Point(12, 54);
+            this.buttonSalesHistory.Location = new System.Drawing.Point(16, 66);
+            this.buttonSalesHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSalesHistory.Name = "buttonSalesHistory";
-            this.buttonSalesHistory.Size = new System.Drawing.Size(213, 36);
+            this.buttonSalesHistory.Size = new System.Drawing.Size(284, 44);
             this.buttonSalesHistory.TabIndex = 1;
             this.buttonSalesHistory.Text = "View Sales History";
             this.buttonSalesHistory.UseVisualStyleBackColor = true;
@@ -56,19 +58,21 @@ namespace Sales_Inventory
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(12, 138);
+            this.buttonEdit.Location = new System.Drawing.Point(16, 170);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(213, 36);
+            this.buttonEdit.Size = new System.Drawing.Size(284, 44);
             this.buttonEdit.TabIndex = 2;
-            this.buttonEdit.Text = "Edit Existing Item";
+            this.buttonEdit.Text = "Edit / Delete Existing Item";
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonAddItem
             // 
-            this.buttonAddItem.Location = new System.Drawing.Point(12, 96);
+            this.buttonAddItem.Location = new System.Drawing.Point(16, 118);
+            this.buttonAddItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAddItem.Name = "buttonAddItem";
-            this.buttonAddItem.Size = new System.Drawing.Size(213, 36);
+            this.buttonAddItem.Size = new System.Drawing.Size(284, 44);
             this.buttonAddItem.TabIndex = 4;
             this.buttonAddItem.Text = "Add New Item";
             this.buttonAddItem.UseVisualStyleBackColor = true;
@@ -76,14 +80,14 @@ namespace Sales_Inventory
             // 
             // InventoryHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(237, 188);
+            this.ClientSize = new System.Drawing.Size(316, 231);
             this.Controls.Add(this.buttonAddItem);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonSalesHistory);
             this.Controls.Add(this.buttonSalesReport);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InventoryHome";
             this.Text = "Inventory Home";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InventoryHome_FormClosed);

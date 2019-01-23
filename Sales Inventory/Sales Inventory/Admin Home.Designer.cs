@@ -34,9 +34,10 @@ namespace Sales_Inventory
             // 
             // buttonAddLogin
             // 
-            this.buttonAddLogin.Location = new System.Drawing.Point(12, 12);
+            this.buttonAddLogin.Location = new System.Drawing.Point(16, 15);
+            this.buttonAddLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAddLogin.Name = "buttonAddLogin";
-            this.buttonAddLogin.Size = new System.Drawing.Size(192, 36);
+            this.buttonAddLogin.Size = new System.Drawing.Size(256, 44);
             this.buttonAddLogin.TabIndex = 0;
             this.buttonAddLogin.Text = "Add New Login";
             this.buttonAddLogin.UseVisualStyleBackColor = true;
@@ -44,22 +45,23 @@ namespace Sales_Inventory
             // 
             // buttonEditLogin
             // 
-            this.buttonEditLogin.Location = new System.Drawing.Point(12, 54);
+            this.buttonEditLogin.Location = new System.Drawing.Point(16, 66);
+            this.buttonEditLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEditLogin.Name = "buttonEditLogin";
-            this.buttonEditLogin.Size = new System.Drawing.Size(192, 36);
+            this.buttonEditLogin.Size = new System.Drawing.Size(256, 44);
             this.buttonEditLogin.TabIndex = 1;
-            this.buttonEditLogin.Text = "Edit Existing Login";
+            this.buttonEditLogin.Text = "Edit / Delete Existing Login";
             this.buttonEditLogin.UseVisualStyleBackColor = true;
             this.buttonEditLogin.Click += new System.EventHandler(this.buttonEditLogin_Click);
             // 
             // AdminHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(216, 104);
+            this.ClientSize = new System.Drawing.Size(288, 128);
             this.Controls.Add(this.buttonEditLogin);
             this.Controls.Add(this.buttonAddLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AdminHome";
             this.Text = "Admin Home";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminHome_FormClosed);

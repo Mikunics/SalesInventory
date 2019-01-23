@@ -221,7 +221,9 @@ namespace Sales_Inventory
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "CashierHomePage";
             this.Text = "Cashier Home";
+            this.Activated += new System.EventHandler(this.CashierHomePage_Activated);
             this.Load += new System.EventHandler(this.CashierHomePage_Load);
+            this.Enter += new System.EventHandler(this.CashierHomePage_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
             this.ResumeLayout(false);
